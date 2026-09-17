@@ -55,8 +55,9 @@ if color == "red":
     turtle.bgcolor("red")
 if color == "yellow":
     turtle.bgcolor("yellow")
-    if color == "blue":
-        turtle.bgcolor("blue")
+if color == "blue":
+    turtle.bgcolor("blue")
+
 turtle.done()
 # create screen object and make it persist
 wn = trtl.Screen()
