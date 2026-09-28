@@ -7,7 +7,7 @@ color1 = "Red"
 color2 = "Blue"
 
 wn = trtl.Screen()
-height = 190 # the radius of the shape
+height = 50 # the radius of the shape
 
 painter = trtl.Turtle()
 painter.speed(0)

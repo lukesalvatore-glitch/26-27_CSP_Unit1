@@ -1,17 +1,22 @@
-# Range examples
-# Note: list(range_values) converts the range_values into a list
+# Variables: holds data
+varName = value
+# Use self-Commenting Identifiers
+# first_name = input ("What is your name")
 
-# using the stop parameter to generate
-# a range of numbers from 0 to 10
-one_through_ten = range(7)
-print(list(one_through_ten))
+first_name = input ("what is your first name?")
+adress_1 = " 13 Apple Avenue"
+adress_2 = " Luke's Room"
+city = "Vernon"
+state = "NJ"
+zip = "07462"
 
-# using the start and stop parameters to
-# generate a range of numbers from 1 to 15
-one_through_fifteen = range(1,8)
+# How do I use the data?
+num_1 = 6
+num_2 = 5
+total = num_1 + num_2
 
-print(list(one_through_fifteen))
-# using the start, stop, and step parameters to
-# generate a range of five even numbers starting at 2
-ten_evens = range(2,42,3)
-print(list(ten_evens))
+# Printing values - print() function!
+print(str(total))
+
+#Concatenation - Addition for Strings!
+print(city + ", " + state + " " + zip)
