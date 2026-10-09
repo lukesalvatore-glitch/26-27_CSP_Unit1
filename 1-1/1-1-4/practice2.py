@@ -1,5 +1,5 @@
-num1 = int(input("Give Me A Number"))
-num2 = int(input("Now Give Another Number So They Can Date"))
+num1 = int(input("Give Me A Number Mosky Boy"))
+num2 = int(input("Give A Number for Gage now"))
 
 while num1 % num2 != 0:
     # inform user of result
