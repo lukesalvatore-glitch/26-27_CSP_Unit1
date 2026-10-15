@@ -1,35 +1,43 @@
+# CODE TO COPY
+#   a117_traversing_turtles.py
+#   Add code to make turtles move in a circle and change colors.
 import turtle as trtl
-import math  # Needed for sin and cos
 
-# List of turtle shapes and colors
-turtle_shapes = ["turtle"] * 6
-turtle_colors = ["Dark Green", "Yellow Green", "Green", "Forest Green", "Olive", "Lime"]
-
-# Create turtles and place them in different spots
+# create an empty list of turtles
 my_turtles = []
+
+# use interesting shapes and colors
+turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic"]
+turtle_colors = ["red", "blue", "green", "orange", "purple", "gold"]
+
+for s in turtle_shapes:
+  t = trtl.Turtle(shape=s)
+  t.color(turtle_colors.pop())
+  my_turtles.append(t)
+
+# Starting values for x and y
 startx = 0
 starty = 0
-direction = 0
-radius = 100  # Distance from center
+# Direction Of Turtle
+direction = 90
 
-for i in range(len(turtle_shapes)):
-    t = trtl.Turtle(shape=turtle_shapes[i])
-    t.color(turtle_colors[i])
-    t.penup()  # Prevent drawing lines
+# Loop through the turtles and draw.
+for t in my_turtles:
+  t.penup()
+  t.goto(startx, starty)
+  t.pendown()
+  t.setheading(direction)
+  t.right(45)
+  t.forward(50)
 
-    # Calculate position using math functions
-    angle_rad = math.radians(direction)
-    x = startx + radius * math.cos(angle_rad)
-    y = starty + radius * math.sin(angle_rad)
 
-    t.goto(x, y)  # Move turtle to position
-    t.setheading(direction)  # Face outward
-    my_turtles.append(t)
+  # Change direction to the heading of the last turtle
+  direction = t.heading()
 
-    direction += 60  # Spread evenly (360° / 6 turtles)
+  # Adjusting the starting values for the next turtle
+  startx = t.xcor()
+  starty = t.ycor()
 
-# Keep window open
+
 wn = trtl.Screen()
 wn.mainloop()
-
-
