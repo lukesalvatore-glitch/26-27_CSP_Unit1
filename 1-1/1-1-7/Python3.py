@@ -7,8 +7,8 @@ import turtle as trtl
 my_turtles = []
 
 # use interesting shapes and colors
-turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic", "turtle", "circle"]
-turtle_colors = ["red", "blue", "green", "orange", "purple", "gold", "pink", "purple"]
+turtle_shapes = ["turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle","turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle", "turtle" , "turtle", "turtle", "turtle", "turtle" , "turtle", "turtle", "turtle", "turtle", "turtle" , "turtle", "turtle", "turtle", "turtle"]
+turtle_colors = ["blue", "red", "blue", "red", "blue", "red", "blue", "red", "blue","red","blue","blue", "red", "blue", "red", "blue","red","blue","blue","red","blue","red","blue","red","blue","red","blue","red","blue","red","blue","red","blue","red","blue","red","red","blue","red","blue","red"]
 
 for s in turtle_shapes:
   t = trtl.Turtle(shape=s)
@@ -16,11 +16,11 @@ for s in turtle_shapes:
   my_turtles.append(t)
 
 # Starting values for x and y
-startx = 0
+startx = -25
 starty = 0
 # Direction Of Turtle
 direction = 90
-
+spiral = 50
 # Loop through the turtles and draw.
 for t in my_turtles:
   t.penup()
@@ -28,7 +28,8 @@ for t in my_turtles:
   t.pendown()
   t.setheading(direction)
   t.right(45)
-  t.forward(50)
+  t.forward(spiral)
+  spiral += 10
 
 
   # Change direction to the heading of the last turtle
