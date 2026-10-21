@@ -1,4 +1,4 @@
-days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+days_of_week = ["MP1", "MP2", "MP3", "MP4"]
 my_courses = ["Cyber_Security","Marketing_2", "APGOV", "APBIZZ","Photo","APCS","English"]
 
 for d in days_of_week:
