@@ -36,9 +36,9 @@ for s in turtle_shapes:
 for step in range(50):
     # 1. Move all currently active turtles forward by 5 pixels per frame
     for ht in horiz_turtles:
-        ht.forward(10)
+        ht.forward(15)
     for vt in vert_turtles:
-        vt.forward(10)
+        vt.forward(15)
 
     # 2. Check for collisions between remaining active turtles
     for ht in horiz_turtles[:]:
