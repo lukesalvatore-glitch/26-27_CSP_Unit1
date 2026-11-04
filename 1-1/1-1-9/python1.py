@@ -59,8 +59,8 @@ for x_pos in leg_positions:
 
 
     for step in range(3):
-        duck.forward(25)
-        duck.left(120)
+     duck.forward(25)
+    duck.left(120)
 
     duck.end_fill()
 
