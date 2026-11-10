@@ -5,7 +5,7 @@ screen = turtle.Screen()
 screen.bgcolor("light blue")
 
 duck = turtle.Turtle()
-duck.speed(1)
+duck.speed(99)
 duck.hideturtle()
 
 
@@ -27,7 +27,7 @@ for x, y, radius, color_name in body_parts:
 
     if color_name == "yellow":
         duck.circle(radius)
-    elif color_name in ["black", "white"]:
+    elif color_name in ["white", "black"]:
         duck.circle(radius)
 
     duck.end_fill()
@@ -36,7 +36,7 @@ for x, y, radius, color_name in body_parts:
 duck.penup()
 duck.goto(80, 35)
 duck.pendown()
-duck.color('orange')
+duck.color('light pink')
 duck.begin_fill()
 
 for step in range(3):
@@ -49,7 +49,7 @@ leg_positions = [-20, 20]
 
 for x_pos in leg_positions:
     duck.penup()
-    duck.goto(x_pos, -100)
+    duck.goto(x_pos, -80)
     duck.pendown()
     duck.color('orange')
     duck.pensize(5)
@@ -59,8 +59,8 @@ for x_pos in leg_positions:
 
 
     for step in range(3):
-     duck.forward(25)
-    duck.left(120)
+     duck.forward(15)
+    duck.left(80)
 
     duck.end_fill()
 
