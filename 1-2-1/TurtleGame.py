@@ -6,20 +6,22 @@ import turtle as trtl
 #-----game configuration----
 spot_color = "pink"
 spot_size = 2
-spot_shape = ["arrow","turtle","circle", "square", "triangle", "classic"]
+spot_shape = "circle"
+
+
 #-----initialize turtle-----
-t = trtl.Turtle()
+spot = trtl.Turtle()
+spot.shape(spot_shape)
+spot.turtlesize(spot_size)
+spot.fillcolor(spot_color)
 
 #-----game functions--------
 def spot_clicked(x,y):
-    print("Spot was clicked!")
+    print("SPOT WAS CLICKED!")
 
 
 #-----events----------------
-
-
-
+spot.onclick(spot_clicked)
 
 wn = trtl.Screen()
-wn.onclick(spot_clicked)
 wn.mainloop()
