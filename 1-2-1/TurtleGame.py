@@ -6,22 +6,40 @@ import random as rand
 
 
 #-----game configuration----
-spot_color = "pink"
+spot_color = "red"
 spot_shape = "circle"
 spot_size = 2
 score = 0
+font_setup = ("Arial", 20, "normal")
+timer = 30
+counter_interval = 1000 #1000 is 1 second
+timer_up = False
+sizes = [0.5, 1, 1.5, 2, 2.5, 3]
+shape = "circle"
+shapesize = [0.5, 1, 1.5, 2, 2.5, 3]
+
+
 
 #-----initialize spot-----
 spot = trtl.Turtle()
 spot.shape(spot_shape)
 spot.turtlesize(spot_size)
 spot.color(spot_color)
+
+score_writer = trtl.Turtle()
+score_writer.penup()
+score_writer.goto(200,200)
+score_writer.hideturtle()
+
+counter = trtl.Turtle()
+
 #-----game functions--------
 
 def update_score():
     global score
     score += 1
-    print(score)
+    score_writer.clear()
+    score_writer.write(score, font=font_setup)
 
 def spot_clicked(x, y):
     change_positon()
@@ -36,9 +54,35 @@ def change_positon():
     spot.pendown()
     spot.showturtle()
 
+def countdown():
+  global timer, timer_up
+  counter.clear()
+  if timer <= 0:
+    counter.write("Time's Up", font=font_setup)
+    timer_up = True
+  else:
+    counter.write("Timer: " + str(timer), font=font_setup)
+    timer -= 1
+    counter.getscreen().ontimer(countdown, counter_interval)
+
+def spot_clicked(x,y):
+    global timer_up
+    if timer_up == False:
+        change_positon()
+        update_score()
+    else:
+        spot.hideturtle()
+
+def change_size(x, y):
+  new_size = rand.choice(sizes)
+  shape.size(new_size)
+
+
 
 
 #-----events----------------
-spot.onclick(spot_clicked)
+spot.onclick(change_size)
 wn = trtl.Screen()
+wn.ontimer(countdown, counter_interval)
+wn.bgcolor("light blue")
 wn.mainloop()
