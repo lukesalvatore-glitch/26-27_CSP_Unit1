@@ -15,8 +15,8 @@ timer = 30
 counter_interval = 1000 #1000 is 1 second
 timer_up = False
 sizes = [0.5, 1, 1.5, 2, 2.5, 3]
-shape = "circle"
-shapesize = [0.5, 1, 1.5, 2, 2.5, 3]
+
+
 
 
 
@@ -28,10 +28,14 @@ spot.color(spot_color)
 
 score_writer = trtl.Turtle()
 score_writer.penup()
-score_writer.goto(200,200)
+score_writer.goto(265,265)
 score_writer.hideturtle()
 
 counter = trtl.Turtle()
+counter.goto(300,300)
+counter.penup()
+counter.pendown()
+
 
 #-----game functions--------
 
@@ -65,23 +69,21 @@ def countdown():
     timer -= 1
     counter.getscreen().ontimer(countdown, counter_interval)
 
-def spot_clicked(x,y):
+def change_size():
+    new_size = rand.choice(sizes)
+    spot.turtlesize(new_size)
+
+def spot_clicked(x, y):
     global timer_up
     if timer_up == False:
         change_positon()
+        change_size()
         update_score()
     else:
         spot.hideturtle()
 
-def change_size(x, y):
-  new_size = rand.choice(sizes)
-  shape.size(new_size)
-
-
-
-
 #-----events----------------
-spot.onclick(change_size)
+spot.onclick(spot_clicked)
 wn = trtl.Screen()
 wn.ontimer(countdown, counter_interval)
 wn.bgcolor("light blue")
