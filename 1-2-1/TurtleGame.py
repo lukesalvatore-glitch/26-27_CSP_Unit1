@@ -14,7 +14,7 @@ font_setup = ("Arial", 20, "normal")
 timer = 30
 counter_interval = 1000 #1000 is 1 second
 timer_up = False
-sizes = [0.5, 1, 1.5, 2, 2.5, 3]
+sizes = [0.5, 1, 1.5, 2, 2.5,3, 3.5, 4, 4.5, 5, 5.5, 6 ]
 
 
 
@@ -32,9 +32,9 @@ score_writer.goto(265,265)
 score_writer.hideturtle()
 
 counter = trtl.Turtle()
-counter.goto(300,300)
 counter.penup()
-counter.pendown()
+counter.goto(300,300)
+
 
 
 #-----game functions--------
