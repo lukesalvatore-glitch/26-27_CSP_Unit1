@@ -8,9 +8,9 @@ duck = turtle.Turtle()
 pen = turtle.Turtle()
 t = turtle.Turtle()  # Turtle instance for drawing the sun
 
-duck.speed(100)
+duck.speed(150)
 duck.hideturtle()
-t.speed(100)
+t.speed(150)
 t.hideturtle()
 
 # Define body parts: (x, y, radius, color)
